@@ -2,6 +2,7 @@ import Form from "@/components/modules/Form";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
+import Link from "next/link";
 import "react-toastify/dist/ReactToastify.css";
 const CustomerEditPage = ({ data, id }) => {
   const [form, setForm] = useState(data);
@@ -42,9 +43,9 @@ const CustomerEditPage = ({ data, id }) => {
     <div>
       <Form form={form} setForm={setForm} />
       <div className="w-full mt-32 items-center justify-end pr-16 gap-6 flex">
-        <button className="px-6 border-[1px] py-3 text-lg rounded-lg border-red-400 text-red-400 ">
+        <Link href={"/"} className="px-6 border-[1px] py-3 text-lg rounded-lg border-red-400 text-red-400 ">
           Cancel
-        </button>
+        </Link>
         <button
           onClick={() => saveHandler()}
           className="px-6 bg-green-400 text-black py-3 text-lg rounded-lg "
